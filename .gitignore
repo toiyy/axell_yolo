@@ -1,0 +1,6 @@
+dataset.zip
+submit_81.zip
+dataset/
+results/
+.DS_Store
+tmp_val.json
