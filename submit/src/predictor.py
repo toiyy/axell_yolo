@@ -57,6 +57,12 @@ class Predictor(object):
             # Move detections to CPU
             final_detections = final_detections.cpu()
 
+            # Sort by score in descending order
+            final_detections = final_detections[final_detections[:, 4].argsort(descending=True)]
+
+            # Take only the top 5 detections
+            final_detections = final_detections[:5]
+
             # Scale coordinates back from the resized image (cls.img_size) to the original image size.
             scale_w = orig_shape[1] / cls.img_size
             scale_h = orig_shape[0] / cls.img_size
