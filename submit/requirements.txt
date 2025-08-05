@@ -1,0 +1,7 @@
+pycocotools
+scikit-learn
+numpy
+opencv-python
+torch
+torchvision
+ultralytics
