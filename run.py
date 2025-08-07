@@ -106,6 +106,13 @@ def main():
     runner = Runner(predictor=Predictor, generator=generator)
     runner.run()
     pred_result, speed_result = runner.get_result()
+
+    # --- Save detailed prediction results for analysis ---
+    detailed_pred_path = os.path.join(result_dir, 'detailed_predictions.json')
+    with open(detailed_pred_path, 'w') as f:
+        json.dump(pred_result, f, indent=2)
+    print(f"Detailed predictions saved to: {detailed_pred_path}")
+    # -----------------------------------------------------
     
     # 予測チェッカー
     predict_checker = DictValidator(data_format=data_format)
