@@ -45,7 +45,7 @@ class Predictor(object):
         # Apply Non-Maximum Suppression
         # conf_thres: confidence threshold
         # iou_thres: IoU threshold for NMS
-        detections = non_max_suppression(prediction_tensor, conf_thres=0.5, iou_thres=0.45, classes=None, agnostic=False, max_det=5)
+        detections = non_max_suppression(prediction_tensor, conf_thres=0.01, iou_thres=0.45, classes=None, agnostic=False, max_det=5)
         
         predict_list = []
         
